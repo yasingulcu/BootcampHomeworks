@@ -1,0 +1,27 @@
+﻿@model List<Article>
+<h2>Blog Yazı Listesi</h2>
+<br />
+
+<link href="~/css/site.css" rel="stylesheet" />
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Yazı Adı</th>
+        <th>Yazı Kategorisi</th>
+        <th>Yazıyı Yazan Kullanıcı</th>
+        <th>Yazının Yorumları</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ArticleId</td>
+            <td>@item.ArticleName</td>
+            <td>@item.Category.CategoryName</td>
+            <td>@item.User.UserName </td>
+            <td><a href="/Comment/GetList/@item.ArticleId" class="btn btn-primary">Yorumları Gör</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Article/Add" class="btn btn-info">Yazı Ekle</a>

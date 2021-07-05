@@ -1,0 +1,14 @@
+﻿@model User
+<h1>Kullanıcı Ekleme Sayfası</h1>
+<br />
+<link href="~/css/site.css" rel="stylesheet" />
+@using (Html.BeginForm("Add", "User", FormMethod.Post))
+{
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kullanıcı Şifresi")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Kullanıcı Ekle</button>
+}

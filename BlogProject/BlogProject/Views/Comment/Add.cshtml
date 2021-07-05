@@ -1,0 +1,18 @@
+﻿@model Comment
+<h1>Yorum Ekleme Sayfası</h1>
+<br />
+<link href="~/css/site.css" rel="stylesheet" />
+@using (Html.BeginForm("Add", "Comment", FormMethod.Post))
+{
+    @Html.Label("Yorum")
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yorum Yazan Kullanıcı")
+    @Html.DropDownListFor(x => x.UserId, (List<SelectListItem>)ViewBag.vlc1, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Yazı Adı")
+    @Html.DropDownListFor(x => x.ArticleId, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Yorum Ekle</button>
+}

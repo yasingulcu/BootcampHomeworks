@@ -1,0 +1,11 @@
+﻿@model Category
+<h2>Kategori Ekleme Sayfası</h2>
+<br />
+<link href="~/css/site.css" rel="stylesheet" />
+@using (Html.BeginForm("Add", "Category", FormMethod.Post))
+{
+    @Html.Label("Kategori Adı")
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" });
+    <br />
+    <button class="btn btn-info">Yeni Kategori Ekle</button>
+}

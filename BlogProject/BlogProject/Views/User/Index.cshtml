@@ -1,0 +1,18 @@
+﻿@model List<User>
+<h2>Kullanıcların Listesi</h2>
+<br />
+<link href="~/css/site.css" rel="stylesheet" />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kullanıcı Adı</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.UserId</td>
+            <td>@item.UserName</td>
+        </tr>
+    }
+</table>
+<a href="/User/Add" class="btn btn-success">Yeni Kullanıcı Ekle</a>

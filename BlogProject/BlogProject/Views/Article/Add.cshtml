@@ -1,0 +1,15 @@
+﻿@model Article
+<link href="~/css/site.css" rel="stylesheet" />
+@using (Html.BeginForm("Add", "Article", FormMethod.Post))
+{
+    @Html.Label("Yazı")
+    @Html.TextBoxFor(x => x.ArticleName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kullanıcı")
+    @Html.TextBoxFor(x => x.User.UserName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kategori")
+    @Html.TextBoxFor(x => x.Category.CategoryName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Yazı Ekle</button>
+}
